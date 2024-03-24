@@ -546,7 +546,7 @@ bool BlurEffect::shouldBlur(const EffectWindow *w, int mask, const WindowPaintDa
 bool BlurEffect::shouldForceBlur(const EffectWindow *w) const
 {
     if (w->isDock() || (!m_blurMenus && (w->isMenu() || w->isDropdownMenu() || w->isPopupMenu())))
-        return false;
+        return true;
 
     bool matches = m_windowClasses.contains(w->window()->resourceName())
         || m_windowClasses.contains(w->window()->resourceClass());
